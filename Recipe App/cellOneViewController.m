@@ -1,33 +1,29 @@
 //
-//  RecipeViewController.m
+//  cellOneViewController.m
 //  Recipe App
 //
-//  Created by Christian Monson on 2/4/15.
+//  Created by Gamaliel Tellez on 2/5/15.
 //  Copyright (c) 2015 DevMountain. All rights reserved.
 //
 
-#import "RecipeViewController.h"
+#import "cellOneViewController.h"
 #import "RecipesTableViewDataSource.h"
-#import "DetailViewController.h"
 
-@interface RecipeViewController () <UITableViewDelegate>
+#import "RecipeViewController.h"
 
-@property (nonatomic, strong) NSIndexPath *indexPath;
+
+@interface cellOneViewController ()
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) RecipesTableViewDataSource *recipesDataSource;
-@property (nonatomic, strong) DetailViewController *dvc;
+
 
 
 @end
 
-@implementation RecipeViewController
-
+@implementation cellOneViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.tableView.backgroundColor = [UIColor whiteColor];
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     
@@ -36,29 +32,12 @@
     [self.recipesDataSource registerTableView:self.tableView];
     self.tableView.dataSource = self.recipesDataSource;
     
-    
-    
-    self.tableView.delegate = self;
-    
-    
-    
-    
     [self.view addSubview:self.tableView];
-    
-}
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    DetailViewController *detailViewController = [DetailViewController new];
-    detailViewController.indexPathSelected = indexPath;
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    
-    NSLog(@"%@", indexPath);
     
     
     
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
