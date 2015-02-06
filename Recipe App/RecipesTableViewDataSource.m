@@ -8,6 +8,11 @@
 
 #import "RecipesTableViewDataSource.h"
 #import "RARecipes.h"
+#import "RecipeViewController.h"
+
+static NSString * const CellIdentifier = @"Cell";
+
+
 @interface RecipesTableViewDataSource ()
 @property (nonatomic, strong) UITableView *tableView;
 @end
@@ -33,6 +38,20 @@
     cell.textLabel.text = [RARecipes titleAtIndex: indexPath.row];
     
     return cell;
+
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+//{
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    
+//    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+//    
+//    cell.textLabel.text = [RARecipes titleAtIndex:indexPath.row];
+//    cell.detailTextLabel.text = [RARecipes descriptionAtIndex:indexPath.row];
+//    cell.detailTextLabel.numberOfLines = 5;
+//    
+//    return cell;
+
+
 }
 
 
